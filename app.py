@@ -15,8 +15,11 @@ def read_root():
     return {"message": "Welcome to the Placement Classification API"}
 
 @app.post("/predict")
-def predict_placement(gender: str, ssc_p: float, ssc_b: str, hsc_p: float, hsc_b: str, hsc_s: str, degree_p: float, degree_t: str, workex: str, etest_p: float, specialisation: str, mba_p: float):
-    # Transform categorical variables
+def predict_placement(
+    gender: str, ssc_p: float, ssc_b: str, hsc_p: float, hsc_b: str, hsc_s: str, 
+    degree_p: float, degree_t: str, workex: str, etest_p: float, specialisation: str, mba_p: float ):
+    
+    # encoding  categorical variables into numerical variables
     gender_encoded = encoders['gender'].transform([gender])[0]
     ssc_b_encoded = encoders['ssc_b'].transform([ssc_b])[0]
 
