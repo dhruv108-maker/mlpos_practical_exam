@@ -1,0 +1,3 @@
+1. train ml model for classification using sklearn store in model.pkl, using fastapi for data validation, swagger ui
+
+2. load that pretrained model, make predicto using gradio user input, gerates prediction
